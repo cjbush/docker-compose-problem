@@ -6,6 +6,8 @@ x-common-variables: &common-variables
 services:
   webapplication1:
     image: ${DOCKER_REGISTRY-}webapplication1
+    environment:
+      << : *common-variables
     build:
       context: .
       dockerfile: WebApplication1/Dockerfile
